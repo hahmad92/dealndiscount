@@ -1,0 +1,9 @@
+{
+  "dealNdiscountApp": {
+    "BankType": {
+      "null": "",
+      "CONVENTIONAL": "CONVENTIONAL",
+      "ISLAMIC": "ISLAMIC"
+    }
+  }
+}

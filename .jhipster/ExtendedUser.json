@@ -1,0 +1,23 @@
+{
+  "annotations": {
+    "changelogDate": "20240805135341"
+  },
+  "applications": ["dealNdiscount"],
+  "fields": [
+    {
+      "fieldName": "dob",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "ExtendedUser",
+  "relationships": [
+    {
+      "otherEntityName": "city",
+      "relationshipName": "city",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

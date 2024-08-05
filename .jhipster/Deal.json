@@ -1,0 +1,52 @@
+{
+  "annotations": {
+    "changelogDate": "20240805135041"
+  },
+  "applications": ["dealNdiscount"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "discountPercentage",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "max", "min"],
+      "fieldValidateRulesMax": "100",
+      "fieldValidateRulesMin": "1"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isDealActive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Deal",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "card",
+      "relationshipName": "card",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "store",
+      "relationshipName": "store",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

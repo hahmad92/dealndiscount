@@ -1,0 +1,37 @@
+{
+  "annotations": {
+    "changelogDate": "20240805135241"
+  },
+  "applications": ["dealNdiscount"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "userId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "storeId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cityId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cardId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "favoriteType",
+      "fieldType": "FavoriteType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "STORE,CITY,CARD"
+    }
+  ],
+  "name": "Favorite",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

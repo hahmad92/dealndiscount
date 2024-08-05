@@ -1,0 +1,25 @@
+{
+  "annotations": {
+    "changelogDate": "20240805134741"
+  },
+  "applications": ["dealNdiscount"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "bankName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "bankType",
+      "fieldType": "BankType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "CONVENTIONAL,ISLAMIC"
+    }
+  ],
+  "name": "Bank",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

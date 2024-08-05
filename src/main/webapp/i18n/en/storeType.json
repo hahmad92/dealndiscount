@@ -1,0 +1,9 @@
+{
+  "dealNdiscountApp": {
+    "StoreType": {
+      "null": "",
+      "ONLINE": "ONLINE",
+      "PHYSICAL": "PHYSICAL"
+    }
+  }
+}

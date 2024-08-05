@@ -1,0 +1,132 @@
+application {
+    config {
+        applicationType monolith
+        authenticationType jwt
+        baseName dealNdiscount
+        buildTool maven
+        cacheProvider ehcache
+        clientFramework react
+        clientTheme flatly
+        clientThemeVariant primary
+        databaseType sql
+        devDatabaseType postgresql
+        enableHibernateCache true
+        enableSwaggerCodegen true
+        enableTranslation true
+        jhipsterVersion "8.6.0"
+        languages [en]
+        messageBroker false
+        microfrontends []
+        nativeLanguage en
+        packageName pk.dealndiscount
+        prodDatabaseType postgresql
+        reactive false
+        searchEngine false
+        serviceDiscoveryType false
+        testFrameworks [cypress]
+        websocket false
+        withAdminUi true
+    }
+    entities  *
+}
+
+entity Bank {
+    bankName String required
+    bankType BankType required
+}
+
+enum BankType {
+    CONVENTIONAL,
+    ISLAMIC
+}
+
+enum CardNetwork {
+    VISA,
+    MASTERCARD,
+    AMERICAN_EXPRESS,
+    DISCOVER,
+    DINERS_CLUB,
+    JCB,
+    UNIONPAY,
+    PAKPAY
+}
+
+entity Card {
+    cardName String required,
+    category CardCategory required
+    cardNetwork CardNetwork required
+}
+enum CardCategory {
+    CREDIT,
+    DEBIT,
+    ISLAMIC_CREDIT,
+    ISLAMIC_DEBIT,
+    WALLET
+}
+
+entity Store {
+    storeName String required
+    storeType StoreType required
+    storeCategory StoreCategory required
+    address String required
+    phone String required
+    geoLocation String required
+}
+
+enum StoreType {
+    ONLINE,
+    PHYSICAL
+}
+
+enum StoreCategory {
+    GROCERY,
+    ELECTRONICS,
+    CLOTHING,
+    PHARMACY,
+    RESTAURANT,
+    DINING,
+    TRAVEL
+}
+
+entity Deal {
+    discountPercentage Integer required max(100) min(1),
+    description String,
+    startDate Instant,
+    endDate Instant,
+    isDealActive Boolean required
+}
+
+entity City {
+    cityName String required
+}
+
+entity Favorite {
+    userId String required
+    storeId String
+    cityId String
+    cardId String
+    favoriteType FavoriteType required
+}
+enum FavoriteType {
+    STORE,
+    CITY,
+    CARD
+}
+entity ExtendedUser {
+    dob Instant
+}
+
+relationship ManyToOne {
+    ExtendedUser{city} to City
+    Store{city} to City
+    Deal{card} to Card
+    Deal{store} to Store
+    Card{bank} to Bank
+}
+
+
+dto Bank, Card, Store, Deal, City, Favorite with mapstruct
+service all with serviceImpl
+paginate Bank, Card, Store, City, Favorite with pagination
+paginate Deal with infinite-scroll
+filter Deal, Card

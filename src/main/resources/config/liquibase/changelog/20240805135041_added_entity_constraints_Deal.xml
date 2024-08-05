@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Deal.
+    -->
+    <changeSet id="20240805135041-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="card_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal__card_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="card"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="store_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal__store_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="store"
+                                 />
+    </changeSet>
+</databaseChangeLog>

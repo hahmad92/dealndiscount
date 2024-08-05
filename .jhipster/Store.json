@@ -1,0 +1,53 @@
+{
+  "annotations": {
+    "changelogDate": "20240805134941"
+  },
+  "applications": ["dealNdiscount"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "storeName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "storeType",
+      "fieldType": "StoreType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ONLINE,PHYSICAL"
+    },
+    {
+      "fieldName": "storeCategory",
+      "fieldType": "StoreCategory",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "GROCERY,ELECTRONICS,CLOTHING,PHARMACY,RESTAURANT,DINING,TRAVEL"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "geoLocation",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Store",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "city",
+      "relationshipName": "city",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

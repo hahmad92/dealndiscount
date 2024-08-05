@@ -1,0 +1,10 @@
+{
+  "dealNdiscountApp": {
+    "FavoriteType": {
+      "null": "",
+      "STORE": "STORE",
+      "CITY": "CITY",
+      "CARD": "CARD"
+    }
+  }
+}

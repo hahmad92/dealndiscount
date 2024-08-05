@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20240805134841"
+  },
+  "applications": ["dealNdiscount"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "cardName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "CardCategory",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "CREDIT,DEBIT,ISLAMIC_CREDIT,ISLAMIC_DEBIT,WALLET"
+    },
+    {
+      "fieldName": "cardNetwork",
+      "fieldType": "CardNetwork",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "VISA,MASTERCARD,AMERICAN_EXPRESS,DISCOVER,DINERS_CLUB,JCB,UNIONPAY,PAKPAY"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Card",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "bank",
+      "relationshipName": "bank",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

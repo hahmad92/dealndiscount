@@ -1,0 +1,15 @@
+export enum StoreCategory {
+  GROCERY = 'GROCERY',
+
+  ELECTRONICS = 'ELECTRONICS',
+
+  CLOTHING = 'CLOTHING',
+
+  PHARMACY = 'PHARMACY',
+
+  RESTAURANT = 'RESTAURANT',
+
+  DINING = 'DINING',
+
+  TRAVEL = 'TRAVEL',
+}
