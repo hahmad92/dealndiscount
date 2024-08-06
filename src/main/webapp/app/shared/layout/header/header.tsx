@@ -1,5 +1,3 @@
-import './header.scss';
-
 import React, { useState } from 'react';
 import { Translate, Storage } from 'react-jhipster';
 import { Navbar, Nav, NavbarToggler, Collapse } from 'reactstrap';
@@ -32,7 +30,7 @@ const Header = (props: IHeaderProps) => {
 
   const renderDevRibbon = () =>
     props.isInProduction === false ? (
-      <div className="ribbon dev">
+      <div className="">
         <a href="">
           <Translate contentKey={`global.ribbon.${props.ribbonEnv}`} />
         </a>

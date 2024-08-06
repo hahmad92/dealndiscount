@@ -11,6 +11,8 @@ import ErrorBoundary from 'app/shared/error/error-boundary';
 import AppComponent from 'app/app';
 import { loadIcons } from 'app/config/icon-loader';
 
+import { ThemeProvider } from '@material-tailwind/react';
+
 const store = getStore();
 registerLocale(store);
 
@@ -27,7 +29,9 @@ const render = Component =>
     <ErrorBoundary>
       <Provider store={store}>
         <div>
-          <Component />
+          <ThemeProvider>
+            <Component />
+          </ThemeProvider>
         </div>
       </Provider>
     </ErrorBoundary>,

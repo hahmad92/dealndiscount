@@ -1,5 +1,3 @@
-import './home.scss';
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Translate } from 'react-jhipster';
